@@ -1,0 +1,29 @@
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+aironet-82(config)#hostname aironet-82
+aironet-82(config)#dot11 ssid lakiSWELDO-82
+aironet-82(config-ssid)#vlan 82
+aironet-82(config-ssid)#authentication open
+aironet-82(config-ssid)#authentication key-management wpa
+aironet-82(config-ssid)#wpa-psk ascii C1sc0123
+aironet-82(config-ssid)#guest-mode
+aironet-82(config-ssid)#default Int Dot11Radio 0
+Cannot disable station-role
+
+Interface Dot11Radio0 set to default configuration
+aironet-82(config)#default interface gigabitEthernet 0
+%command not allowed, cannot remove bridge-group 1
+Interface GigabitEthernet0 set to default configuration
+aironet-82(config)#int dot11radio 0
+aironet-82(config-if)#no shut
+aironet-82(config-if)#channel 3
+aironet-82(config-if)#encryption mode ciphers tkip
+aironet-82(config-if)#encryption vlan 82 mode ciphers tkip
+aironet-82(config-if)#ssid lakiSWELDO-82
+aironet-82(config-if)#exit
+aironet-82(config)#interface dot11radio 0.82
+aironet-82(config-subif)#encapsulation dot1q 82 native
+aironet-82(config-subif)#bridge-group 1
+aironet-82(config-subif)#exit
+aironet-82(config)#end
+aironet-82#
